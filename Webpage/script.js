@@ -154,6 +154,7 @@ function speak() {
 
   newText = prevText.replace(/fucking/g, 'ducking');
   newText = newText.replace('f******', 'ducking');
+
   newText = newText.replace(/fuck/g, 'duck');
   newText = newText.replace('f***', 'duck');
   newText = newText.replace(/bitch/g, 'peach');
