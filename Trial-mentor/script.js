@@ -1,27 +1,36 @@
 function speak() {
   var textarea = document.getElementById('fieldinput');
-  let badwords = /fucking|cunt|moron|fuck|bastard|bitch/gi;
   let prevText = textarea.value;
   let newText;
+
   newText = prevText.replace(/fucking/g, 'ducking');
-  // newText = newText.replace(/ing/g, '');
-  // newText = newText.replace(/f**/g, 'duck');
-  // newText = newText.replace(/cunt/g, 'gunt');
-
-  // newText = newText.replace(/arse/g, '');
-  // newText = newText.replace(/ass/g, '');
-  // newText = newText.replace(/asshole/g, '');
-  // newText = newText.replace(/bastard/g, '');
-  // newText = newText.replace(/bitch/g, '');
-  // newText = newText.replace(/brotherfucker/g, '');
-  // newText = newText.replace(/bugger/g, '');
-  // newText = newText.replace(//g, 'test');
-
-  newText = newText.replace(/holy/g, 'jolly');
-  newText = newText.replace(/shit/g, 'bit');
-  newText = newText.replace(/bit/g, 'gunt');
+  newText = newText.replace('f******', 'ducking');
   newText = newText.replace(/fuck/g, 'duck');
+  newText = newText.replace('f***', 'duck');
+  newText = newText.replace(/bitch/g, 'peach');
+  newText = newText.replace('b****', 'peach');
+  newText = newText.replace(/ass/g, 'base');
+  newText = newText.replace('a**', 'base');
+  newText = newText.replace(/asshole/g, 'pothole');
+  newText = newText.replace('a******', 'pothole');
+  newText = newText.replace(/bastard/g, 'mustard');
+  newText = newText.replace('b******', 'mustard');
+  newText = newText.replace(/holy/g, 'jolly');
+  newText = newText.replace('h***', 'jolly');
+  newText = newText.replace(/shit/g, 'bit');
+  newText = newText.replace('s***', 'bit');
+
   newText = newText.replace(/cunt/g, 'gunt');
+  newText = newText.replace('c***', 'g***');
+  newText = newText.replace(/cocksucker/g, 'clogger');
+  newText = newText.replace('c*********', 'clogger');
+  newText = newText.replace(/sucker/g, 'slacker');
+  newText = newText.replace('s*****', 'slacker');
+  newText = newText.replace(/fucker/g, 'ducker');
+  newText = newText.replace('f*****', 'ducker');
+
+  // newText = newText.replace(/ /g, '');
+  // newText = newText.replace(' ', '');
 
   document.getElementById('fieldinput').value = newText;
   responsiveVoice.speak(newText);
