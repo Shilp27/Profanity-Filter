@@ -9,9 +9,7 @@ try {
 var textareaInput = $('#textarea-input');
 var instructions = $('#recording-instructions');
 var recordsList = $('ul#records');
-
 var recordContent = '';
-
 var records = getAllRecords();
 renderRecords(records);
 recognition.continuous = true;
@@ -21,7 +19,6 @@ recognition.onresult = function (event) {
   var transcript = event.results[current][0].transcript;
   var mobileRepeatBug =
     current == 1 && transcript == event.results[0][0].transcript;
-
   if (!mobileRepeatBug) {
     recordContent += transcript;
     textareaInput.val(recordContent);
@@ -130,7 +127,6 @@ function getAllRecords() {
   var key;
   for (var i = 0; i < localStorage.length; i++) {
     key = localStorage.key(i);
-
     if (key.substring(0, 5) == 'note-') {
       records.push({
         date: key.replace('note-', ''),
@@ -146,15 +142,12 @@ function deleteRecord(dateTime) {
   instructions.text('Record was deleted from localStorage.');
 }
 
-// SPEAKING TEXT PART
 function speak() {
   var textarea = document.getElementById('textarea-input');
   let prevText = textarea.value;
   let newText;
-
   newText = prevText.replace(/fucking/g, 'ducking');
   newText = newText.replace('f******', 'ducking');
-
   newText = newText.replace(/fuck/g, 'duck');
   newText = newText.replace('f***', 'duck');
   newText = newText.replace(/bitch/g, 'peach');
@@ -169,7 +162,6 @@ function speak() {
   newText = newText.replace('h***', 'jolly');
   newText = newText.replace(/shit/g, 'chit');
   newText = newText.replace('s***', 'chit');
-
   newText = newText.replace(/cunt/g, 'gunt');
   newText = newText.replace('c***', 'g***');
   newText = newText.replace(/cocksucker/g, 'clogger');
@@ -178,10 +170,6 @@ function speak() {
   newText = newText.replace('s*****', 'slacker');
   newText = newText.replace(/fucker/g, 'ducker');
   newText = newText.replace('f*****', 'ducker');
-
-  // newText = newText.replace(/ /g, '');
-  // newText = newText.replace(' ', '');
-
   document.getElementById('textarea-input').value = newText;
   responsiveVoice.speak(newText);
 }
