@@ -1,5 +1,3 @@
-console.log('HELLO');
-
 var SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
@@ -128,8 +126,6 @@ function getAllRecords() {
   var key;
   for (var i = 0; i < localStorage.length; i++) {
     key = localStorage.key(i);
-    console.log(i);
-    console.log(key);
 
     if (key.substring(0, 5) == 'note-') {
       records.push({
@@ -138,7 +134,6 @@ function getAllRecords() {
       });
     }
   }
-  console.log(records);
   return records;
 }
 
@@ -150,7 +145,6 @@ function deleteRecord(dateTime) {
 // SPEAKING TEXT PART
 function speak() {
   var textarea = document.getElementById('textarea-input');
-  console.log('SPEAKING');
   let prevText = textarea.value;
   let newText;
 
@@ -183,6 +177,6 @@ function speak() {
   // newText = newText.replace(/ /g, '');
   // newText = newText.replace(' ', '');
 
-  document.getElementById('fieldinput').value = newText;
+  document.getElementById('textarea-input').value = newText;
   responsiveVoice.speak(newText);
 }
