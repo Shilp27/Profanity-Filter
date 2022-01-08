@@ -159,16 +159,16 @@ function speak() {
   newText = newText.replace('f***', 'duck');
   newText = newText.replace(/bitch/g, 'peach');
   newText = newText.replace('b****', 'peach');
+  newText = newText.replace(/asshole/g, 'eggroll');
+  newText = newText.replace('a******', 'eggroll');
   newText = newText.replace(/ass/g, 'base');
   newText = newText.replace('a**', 'base');
-  newText = newText.replace(/asshole/g, 'pothole');
-  newText = newText.replace('a******', 'pothole');
   newText = newText.replace(/bastard/g, 'mustard');
   newText = newText.replace('b******', 'mustard');
   newText = newText.replace(/holy/g, 'jolly');
   newText = newText.replace('h***', 'jolly');
-  newText = newText.replace(/shit/g, 'bit');
-  newText = newText.replace('s***', 'bit');
+  newText = newText.replace(/shit/g, 'chit');
+  newText = newText.replace('s***', 'chit');
 
   newText = newText.replace(/cunt/g, 'gunt');
   newText = newText.replace('c***', 'g***');
