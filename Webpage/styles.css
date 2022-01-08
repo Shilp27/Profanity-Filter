@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Jockey+One);
-
+@import url(https://fonts.googleapis.com/css?family=Righteous);
 body {
   background-color: #2a3046;
 }
@@ -38,29 +38,45 @@ button {
   outline: none;
   border-radius: 10px;
   border-style: none;
+  font-family: Righteous;
 }
+
 
 button:hover {
   background-color: darkmagenta;
   color: snow;
   transition: 1s;
   transform: scale(1.05);
+  font-family: Righteous;
 }
+
 
 textarea {
   width: 100%;
   padding: 5px;
+  font-family: Righteous;
+
 }
 
 p {
   color: white;
   text-align: center;
+  font-family: Righteous;
+
 }
 
 h3 {
   color: floralwhite;
+  font-family: Righteous;
+
 }
 
 li {
   list-style: none;
+  font-family: Righteous;
+
+}
+
+a{
+  color: #abdeef;
 }
