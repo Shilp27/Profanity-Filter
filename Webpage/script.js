@@ -1,6 +1,10 @@
-var SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-var recognition = new SpeechRecognition();
+try {
+  var SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recognition = new SpeechRecognition();
+} catch (e) {
+  console.error(e);
+}
 
 var textareaInput = $('#textarea-input');
 var instructions = $('#recording-instructions');
@@ -15,25 +19,25 @@ recognition.continuous = true;
 recognition.onresult = function (event) {
   var current = event.resultIndex;
   var transcript = event.results[current][0].transcript;
+  var mobileRepeatBug =
+    current == 1 && transcript == event.results[0][0].transcript;
 
-  /* MOBILE BUG PART TO BE REMOVED */
-  //   var mobileRepeatBug =
-  //     current == 1 && transcript == event.results[0][0].transcript;
-
-  //   if (!mobileRepeatBug) {
-  //     recordContent += transcript;
-  //     textareaInput.val(recordContent);
-  //   }
+  if (!mobileRepeatBug) {
+    recordContent += transcript;
+    textareaInput.val(recordContent);
+  }
 };
 
 recognition.onstart = function () {
   instructions.text('Voice Recognition is active. Speak into the microphone.');
+  console.log('Started');
 };
 
 recognition.onspeechend = function () {
   instructions.text(
     'You were silent for too long, voice recognition has been turned off.'
   );
+  console.log('silent recording');
 };
 
 recognition.onerror = function (event) {
@@ -52,6 +56,7 @@ $('#start-recording').on('click', function (e) {
 $('#stop-recording').on('click', function (e) {
   recognition.stop();
   instructions.text('Voice recognition has been terminated.');
+  console.log('STOPPED RECORDING');
 });
 
 textareaInput.on('input', function () {
@@ -65,8 +70,6 @@ $('#filter-recording').on('click', function (e) {
     instructions.text('Text was not detected, nothing to speak.');
   } else {
     saveRecord(new Date().toLocaleString(), recordContent);
-    // TO CHANGE TEXT AREA AFTER SUBMIT TO BLANK (OPTIONAL)
-    // or the down part
     recordContent = '';
     renderRecords(getAllRecords());
     textareaInput.val('');
