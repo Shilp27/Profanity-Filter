@@ -80,11 +80,11 @@ $('#filter-recording').on('click', function (e) {
 recordsList.on('click', function (e) {
   e.preventDefault();
   var target = $(e.target);
+  console.log(target);
   if (target.hasClass('listen-record')) {
     var content = target.closest('.record').find('.content').text();
     readOutLoud(content);
   }
-
   if (target.hasClass('delete-record')) {
     var dateTime = target.siblings('.date').text();
     deleteRecord(dateTime);
@@ -94,6 +94,7 @@ recordsList.on('click', function (e) {
 
 function readOutLoud(message) {
   var speech = new SpeechSynthesisUtterance();
+  console.log(message);
   speech.text = message;
   speech.volume = 1;
   speech.rate = 1;
@@ -109,7 +110,7 @@ function renderRecords(records) {
           <p class="header">
             <span class="date">${record.date}</span>
             <a href="#" class="listen-record" title="Listen to Recording">Listen to Record</a>
-            <a href="#" class="delete-record" title="Delete Recording">Delete</a>
+            <a href="#" class="delete-record" title="Delete">Delete</a>
           </p>
           <p class="content">${record.content}</p>
         </li>`;
