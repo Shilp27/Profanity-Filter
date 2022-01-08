@@ -142,13 +142,15 @@ function getAllRecords() {
   return records;
 }
 
-function deleteNote(dateTime) {
+function deleteRecord(dateTime) {
   localStorage.removeItem('note-' + dateTime);
+  instructions.text('Record was deleted from localStorage.');
 }
 
 // SPEAKING TEXT PART
 function speak() {
-  var textarea = document.getElementById('fieldinput');
+  var textarea = document.getElementById('textarea-input');
+  console.log('SPEAKING');
   let prevText = textarea.value;
   let newText;
 

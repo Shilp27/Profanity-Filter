@@ -17,8 +17,10 @@ h1 {
 h2{
     color:white;
     text-align:center;
-    margin:0;
+    margin-top:-10px;
     padding:0;
+    font-family: 'Jockey One';
+    letter-spacing:2px;
 }
 
 .main-container {
@@ -52,6 +54,7 @@ textarea {
 
 p {
   color: white;
+  text-align:center;
 }
 
 h3 {
