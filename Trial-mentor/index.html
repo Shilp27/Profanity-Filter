@@ -32,9 +32,9 @@
         let badwords = /fucking|cunt|moron|fuck|bastard|bitch/gi;
         let prevText = textarea.value;
         let newText;
-        // newText = prevText.replace('fuck', 'duck');
-        newText = prevText.replace('donkey', 'crack');
-        newText = prevText.replace('fuck', 'duck');
+        newText = prevText.replace(/fucking/g, 'bastard');
+        newText = newText.replace(/fuck/g, 'duck');
+        newText = newText.replace(/donkey/g, 'crack');
 
         document.getElementById('fieldinput').value = newText;
         responsiveVoice.speak(newText);
