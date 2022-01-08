@@ -24,21 +24,5 @@
       type="text/javascript"
       src="https://code.responsivevoice.org/responsivevoice.js"
     ></script>
-    <script>
-      function speak() {
-        // var audio = new Audio('beep.mp3');
-        // audio.play();
-        var textarea = document.getElementById('fieldinput');
-        let badwords = /fucking|cunt|moron|fuck|bastard|bitch/gi;
-        let prevText = textarea.value;
-        let newText;
-        newText = prevText.replace(/fucking/g, 'bastard');
-        newText = newText.replace(/fuck/g, 'duck');
-        newText = newText.replace(/donkey/g, 'crack');
-
-        document.getElementById('fieldinput').value = newText;
-        responsiveVoice.speak(newText);
-      }
-    </script>
   </body>
 </html>
