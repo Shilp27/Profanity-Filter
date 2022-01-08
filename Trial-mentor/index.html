@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Son of a PEACH</title>
+  </head>
+  <body>
+    <h1>Son of a Peach</h1>
+    <h2>Profanity Filter</h2>
+    <div class="inputfield">
+      <textarea
+        id="fieldinput"
+        placeholder="Enter text to be filtered"
+        rows="10"
+        cols="40"
+      ></textarea>
+    </div>
+    <button id="saveinput" onclick="speak()" title="speak">Speak</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.responsivevoice.org/responsivevoice.js"
+    ></script>
+    <script>
+      function speak() {
+        // var audio = new Audio('beep.mp3');
+        // audio.play();
+        var textarea = document.getElementById('fieldinput');
+        let badwords = /fucking|cunt|moron|fuck|bastard|bitch/gi;
+        let prevText = textarea.value;
+        let newText;
+        // newText = prevText.replace('fuck', 'duck');
+        newText = prevText.replace('donkey', 'crack');
+        newText = prevText.replace('fuck', 'duck');
+
+        document.getElementById('fieldinput').value = newText;
+        responsiveVoice.speak(newText);
+      }
+    </script>
+  </body>
+</html>
