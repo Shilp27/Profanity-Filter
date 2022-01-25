@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Jockey+One);
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+body {
+  background-color: #2a3046;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  letter-spacing: 5px;
+  font-family: 'Jockey One';
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  margin-top: -10px;
+  padding: 0;
+  font-family: 'Jockey One';
+  letter-spacing: 2px;
+}
+
+.main-container {
+  background-color: #39526d;
+  padding: 2em;
+  margin: 0.5em;
+  margin-top: -10px;
+  text-align: center;
+}
+
+button {
+  background-color: #abdeef;
+  margin: 5px;
+  padding: 0.8em;
+  outline: none;
+  border-radius: 10px;
+  border-style: none;
+  font-family: Righteous;
+}
+
+button:hover {
+  background-color:#2a3046;
+  color: snow;
+  transition: 1s;
+  transform: scale(1.05);
+  font-family: Righteous;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  font-family: Righteous;
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-family: Righteous;
+}
+
+h3 {
+  color: floralwhite;
+  font-family: Righteous;
+}
+
+li {
+  list-style: none;
+  font-family: Righteous;
+}
+
+a{
+  color: #abdeef;
+}
+
+img{
+  width: 47px;
+  height: 51px;
+}
